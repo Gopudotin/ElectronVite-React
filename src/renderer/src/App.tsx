@@ -8,9 +8,9 @@ function App(): JSX.Element {
 
   return (
     <>
-      <SaveText />
+      {/* <SaveText />
       <br />
-      <button onClick={handleSendIPC}>Send IPC</button>
+      <button onClick={handleSendIPC}>Send IPC</button> */}
     </>
   )
 }

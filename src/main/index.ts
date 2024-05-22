@@ -12,7 +12,7 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -80,11 +80,12 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
-ipcMain.handle("saveText", async (event, textValue) => {
-  try {
-    await fs.promises.appendFile("c:\\electron\\Temporary\\file1.txt", textValue + "\n");
-    console.log('Text appended:', textValue);
-  } catch (err) {
-    console.error('Error appending text:', err);
-  }
-});
+
+// ipcMain.handle("saveText", async (event, textValue) => {
+//   try {
+//     await fs.promises.appendFile("c:\\electron\\Temporary\\file1.txt", textValue + "\n");
+//     console.log('Text appended:', textValue);
+//   } catch (err) {
+//     console.error('Error appending text:', err);
+//   }
+// });

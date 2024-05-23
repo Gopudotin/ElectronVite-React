@@ -1,18 +1,15 @@
-import React from 'react'
-import SaveText from './components/SaveText'
+import React from 'react';
+import ScreenNavigation from "./components/ScreenNavigation";
 
 function App(): JSX.Element {
-  const handleSendIPC = (): void => {
-    window.electron.ipcRenderer.send('ping')
-  }
-
   return (
     <>
-      {/* <SaveText />
-      <br />
-      <button onClick={handleSendIPC}>Send IPC</button> */}
+      {/* <div>
+        App
+      </div> */}
+      <ScreenNavigation />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

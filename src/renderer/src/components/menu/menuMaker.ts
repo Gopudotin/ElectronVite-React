@@ -9,7 +9,7 @@ const template = [
       {
         label: 'Screen One',
         // each menu item sends a 'navigate' message along with the screen name ('screenOne', 'screenTwo', 'screenThree') to the renderer process.
-        click: () => {
+        click: ():void => {
           const focusedWindow = BrowserWindow.getFocusedWindow();
           if (focusedWindow) {
             focusedWindow.webContents.send('navigate', 'screenOne');
@@ -18,7 +18,7 @@ const template = [
       },
       {
         label: 'Screen Two',
-        click: () => {
+        click: ():void => {
           const focusedWindow = BrowserWindow.getFocusedWindow();
           if (focusedWindow) {
             focusedWindow.webContents.send('navigate', 'screenTwo');
@@ -27,7 +27,7 @@ const template = [
       },
       {
         label:'Screen Three',
-        click:()=>{
+        click:():void=>{
           const focusedWindow= BrowserWindow.getFocusedWindow();
           if(focusedWindow){
             focusedWindow.webContents.send('navigate','screenThree')

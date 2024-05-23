@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+const numsRows=10;
+const numsCols=30;
+
 const SaveText: React.FC = () => {
   const [inputValue, setInputValue] = useState('')
 
@@ -14,7 +17,7 @@ const SaveText: React.FC = () => {
 
   return (
     <div>
-      <textarea id="mytext" rows="10" cols="30" value={inputValue} onChange={handleInputChange} />
+      <textarea id="mytext" rows={numsRows} cols={numsCols} value={inputValue} onChange={handleInputChange} />
       <br />
       <button onClick={handleSaveText} id="mybutton">
         Save Text

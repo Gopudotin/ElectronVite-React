@@ -4,7 +4,7 @@ const ScreenOne: React.FC = () => {
   const [data, setData] = useState('')
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () :Promise<void> => {
       const result = await window.api.getScreenOneData()
       setData(result)
     }

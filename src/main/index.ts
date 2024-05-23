@@ -1,6 +1,6 @@
 const electron = require('electron')
 
-const { app, shell, BrowserWindow, ipcMain, Menu, dialog, Tray, nativeImage,screen } =  electron
+const { app, shell, BrowserWindow, ipcMain, Menu, Tray, nativeImage,screen } =  electron
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
@@ -10,7 +10,7 @@ import fs from 'fs'
 
 function createWindow(): void {
 
-  let displays = screen.getAllDisplays()
+  const displays = screen.getAllDisplays()
   console.log(`${displays[0].size.width} x ${displays[0].size.height} `)
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -100,7 +100,7 @@ app.whenReady().then(() => {
   })
 
   // IPC test
-  ipcMain.on('ping', () => console.log('pong'))
+  // ipcMain.on('ping', () => console.log('pong'))
 
   createWindow()
 
@@ -123,7 +123,7 @@ app.on('window-all-closed', () => {
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
 ipcMain.handle("saveText", async (event, textValue) => {
-  const filePath = "c:\\electron\\Temporary\\file1.txt";
+  const filePath:string = "c:\\electron\\Temporary\\file1.txt";
 
   try {
     // Check if the file exists
